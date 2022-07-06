@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function RecipeCard({ recipe }) {
@@ -5,7 +6,13 @@ export default function RecipeCard({ recipe }) {
 
   return (
     <div className="card">
-      <div className="featured">{/* thumbnail */}</div>
+      <div className="featured">
+        <Image
+          src={`https:${thumbnail.fields.file.url}`}
+          width={thumbnail.fields.file.details.image.width}
+          height={thumbnail.fields.file.details.image.height}
+        />
+      </div>
 
       <div className="content">
         <div className="info">
